@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="24dp"
+        android:onClick="scheduleJob"
+        android:text="Schedule Job"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar"
+        app:layout_constraintStart_toStartOf="@+id/seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="24dp"
+        android:onClick="cancelJobs"
+        android:text="Cancel Jobs"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <RadioGroup
+        android:id="@+id/networkOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/networkType"
+        app:layout_constraintTop_toBottomOf="@+id/networkType">
+
+        <RadioButton
+            android:id="@+id/noNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="None" />
+
+        <RadioButton
+            android:id="@+id/anyNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Any" />
+
+        <RadioButton
+            android:id="@+id/wifiNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Wifi" />
+    </RadioGroup>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/seekBarLabel"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarLabel" />
+
+    <Switch
+        android:id="@+id/idleSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Device Idle           "
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"></Switch>
+
+    <Switch
+        android:id="@+id/chargingSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Device Charging "
+        app:layout_constraintStart_toStartOf="@+id/idleSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/idleSwitch"></Switch>
+
+    <Switch
+        android:id="@+id/periodicSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Periodic                "
+        app:layout_constraintStart_toStartOf="@+id/chargingSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/chargingSwitch" />
+
+    <TextView
+        android:id="@+id/networkType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Network_type"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/requires"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toStartOf="@+id/networkOptions"
+        app:layout_constraintTop_toBottomOf="@+id/networkOptions" />
+
+    <TextView
+        android:id="@+id/seekBarLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Override Deadline:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toStartOf="@+id/periodicSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/periodicSwitch" />
+
+    <TextView
+        android:id="@+id/seekBarProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Not Set"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toEndOf="@+id/seekBarLabel"
+        app:layout_constraintTop_toBottomOf="@+id/periodicSwitch" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

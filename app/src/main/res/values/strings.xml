@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Notification Scheduler</string>
+    <string name="job_service">Job service</string>
+    <string name="job_running">Job running</string>
+    <string name="Network_type">Required Network Type:</string>
+    <string name="requires">Requires:</string>
+    <string name="periodic_interval">Select interval</string>
+    <string name="override_deadline">Override deadline</string>
+</resources>
